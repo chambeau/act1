@@ -81,7 +81,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     textGeometry.center();
     const text = new THREE.Mesh(textGeometry, material);
     scene.add(text);
-    text.scale.z = 0.5;
+    text.scale.set(1, 1, 1); // Or any other desired scaling factor
 
     text.position.y = 2.75;
 });
