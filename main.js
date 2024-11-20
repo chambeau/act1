@@ -41,7 +41,6 @@ controls.dampingFactor = 0.05;
 // LIGHT
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(-100, 10, 50);
-light.castShadow = true;
 scene.add(light);
 
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.05);
@@ -62,15 +61,13 @@ const fontLoader = new FontLoader();
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     const material = new THREE.MeshBasicMaterial({
         color: 0xa6a6a6,
-        castShadow: true,
-        receiveShadow: true,
     });
 
     //text
     const textGeometry = new TextGeometry("Moon", {
         font: font,
         size: 0.5,
-        height: 0.2,
+        depth: 0.2,
         curveSegments: 12,
         bevelEnabled: true,
         bevelThickness: 0.03,
