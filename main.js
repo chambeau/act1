@@ -60,31 +60,31 @@ memeTexture.encoding = THREE.sRGBEncoding;
 const fontLoader = new FontLoader();
 
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-    console.log("Font loaded:", font); // This will confirm the font is loaded
-
     const material = new THREE.MeshBasicMaterial({
         color: 0xa6a6a6,
     });
 
-    //text
+    // Create the text geometry
     const textGeometry = new TextGeometry("Moon", {
         font: font,
         size: 0.5,
-        depth: 0.05, // Reduce the depth to make it thinner
+        depth: 0.05, // Reduce depth to make the text thinner
         curveSegments: 12,
         bevelEnabled: true,
-        bevelThickness: 0.03,
+        bevelThickness: 0.01, // Reduce bevel thickness
         bevelSize: 0.02,
         bevelOffset: 0,
         bevelSegments: 5,
     });
+
     textGeometry.center();
     const text = new THREE.Mesh(textGeometry, material);
-    text.scale.set(1, 1, 0.5); // This reduces the Z-axis size by half
+    text.position.y = 2.75;
+
+    // Scale down the text on the Z-axis
+    text.scale.set(1, 1, 0.1); // Further reduce the Z-axis thickness
 
     scene.add(text);
-
-    text.position.y = 2.75;
 });
 
 //MEME
