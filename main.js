@@ -48,12 +48,12 @@ scene.add(hemiLight);
 
 // TEXTURE
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load("moon.jpg");
+const texture = textureLoader.load("/textures/moon.jpg");
 texture.encoding = THREE.sRGBEncoding;
 
-const displacementMap = textureLoader.load("displacement.jpg");
+const displacementMap = textureLoader.load("/textures/displacement.jpg");
 
-const memeTexture = textureLoader.load("meme.png");
+const memeTexture = textureLoader.load("/textures/meme.png");
 memeTexture.encoding = THREE.sRGBEncoding;
 // FONT
 const fontLoader = new FontLoader();
