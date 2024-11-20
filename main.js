@@ -55,10 +55,11 @@ const displacementMap = textureLoader.load("/textures/displacement.jpg");
 
 const memeTexture = textureLoader.load("/textures/meme.png");
 memeTexture.encoding = THREE.sRGBEncoding;
+
 // FONT
 const fontLoader = new FontLoader();
 
-fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+fontLoader.load("fonts/helvetiker_regular.typeface.json", (font) => {
     const material = new THREE.MeshBasicMaterial({
         color: 0xa6a6a6,
     });
