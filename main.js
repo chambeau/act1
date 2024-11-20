@@ -70,7 +70,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     const textGeometry = new TextGeometry("Moon", {
         font: font,
         size: 0.5,
-        depth: 0.2,
+        depth: 0.05, // Reduce the depth to make it thinner
         curveSegments: 12,
         bevelEnabled: true,
         bevelThickness: 0.03,
@@ -80,6 +80,8 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     });
     textGeometry.center();
     const text = new THREE.Mesh(textGeometry, material);
+    text.scale.set(1, 1, 0.5); // This reduces the Z-axis size by half
+
     scene.add(text);
 
     text.position.y = 2.75;
