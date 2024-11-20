@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "deploy": "vercel --prod",
+    "login": "vercel login",
+    "logout": "vercel logout"
   },
   "devDependencies": {
-    "vite": "^5.4.10"
+    "vite": "^4.0.4"
   },
   "dependencies": {
-    "gsap": "^3.12.5",
-    "lil-gui": "^0.20.0",
-    "three": "^0.170.0"
+    "lil-gui": "^0.17.0",
+    "gsap": "^3.11.4",
+    "three": "^0.148.0",
+    "vercel": "^39.0.2"
   }
 }
