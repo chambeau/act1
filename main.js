@@ -71,7 +71,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
         depth: 0.001, // Reduce depth to make the text thinner
         curveSegments: 12,
         bevelEnabled: true,
-        bevelThickness: 0.001, // Reduce bevel thickness
+        bevelThickness: 0.0025, // Reduce bevel thickness
         bevelSize: 0.02,
         bevelOffset: 0,
         bevelSegments: 5,
@@ -82,7 +82,7 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     text.position.y = 2.75;
 
     // Scale down the text on the Z-axis
-    text.scale.set(1, 1, 0.001); // Further reduce the Z-axis thickness
+    text.scale.set(1, 1, 0.0025); // Further reduce the Z-axis thickness
 
     scene.add(text);
 });
