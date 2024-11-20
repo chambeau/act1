@@ -68,18 +68,23 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     const textGeometry = new TextGeometry("Moon", {
         font: font,
         size: 0.5,
-        depth: 0.1, // Reduced depth for thinner text
+        depth: 0.001, // Reduce depth to make the text thinner
         curveSegments: 12,
         bevelEnabled: true,
-        bevelThickness: 0.03,
+        bevelThickness: 0.01, // Reduce bevel thickness
         bevelSize: 0.02,
         bevelOffset: 0,
         bevelSegments: 5,
     });
+
     textGeometry.center();
     const text = new THREE.Mesh(textGeometry, material);
+    text.position.y = 2.75;
+
+    // Scale down the text on the Z-axis
+    text.scale.set(1, 1, 0.01); // Further reduce the Z-axis thickness
+
     scene.add(text);
-    text.scale.z = 0.1; // Even thinner scale in the z-axis
 });
 
 //MEME
