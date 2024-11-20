@@ -59,7 +59,9 @@ memeTexture.encoding = THREE.sRGBEncoding;
 // FONT
 const fontLoader = new FontLoader();
 
-fontLoader.load("/helvetiker_regular.typeface.json", (font) => {
+fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
+    console.log("Font loaded:", font); // This will confirm the font is loaded
+
     const material = new THREE.MeshBasicMaterial({
         color: 0xa6a6a6,
     });
